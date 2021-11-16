@@ -1,11 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
+import { Container } from './styles';
 
 export default function Header() {
+    const { color, hasWon } = useSelector((state) => state.picked);
+
     return (
-        <div id="header">
+        <Container color={hasWon ? color : '#090909'}>
             <h1>The</h1>
-            <span>RGB(158, 86, 82)</span>
+            <span>{color}</span>
             <h1>Color Game</h1>
-        </div>
+        </Container>
     )
 }
