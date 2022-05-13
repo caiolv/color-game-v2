@@ -9,7 +9,7 @@ export default function Header() {
     return (
         <Container color={hasWon ? color : '#090909'}>
             <h1>The</h1>
-            <span>{color}</span>
+            <span>{hasWon ? 'CONGRATZ!' : color}</span>
             <h1>Color Game</h1>
         </Container>
     )

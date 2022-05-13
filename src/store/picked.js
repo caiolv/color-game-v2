@@ -6,6 +6,7 @@ const slice = createSlice({
   initialState: {
     color: 'RGB',
     hasWon: false,
+    newGame: false,
   },
 
   reducers: {
@@ -14,17 +15,23 @@ const slice = createSlice({
     },
     playerWon: (state, action) => {
       state.hasWon = true;
+      state.newGame = false;
+    },
+    playAgain: (state, action) => {
+      state.newGame = true;
+      state.hasWon = false;
     },
     resetState: (state, action) => {
       state.color = 'RGB';
       state.hasWon = false;
+      state.newGame = false;
     },
   },
 });
 
 export default slice.reducer;
 
-const { newPickedColor, playerWon, resetState } = slice.actions;
+const { newPickedColor, playerWon, playAgain, resetState } = slice.actions;
 
 export const pickColor = (pickedColor) => async dispatch => {
   try {
@@ -37,6 +44,14 @@ export const pickColor = (pickedColor) => async dispatch => {
 export const won = () => async dispatch => {
   try {
     dispatch(playerWon());
+  } catch (e) {
+    return console.error(e.message);
+  }
+}
+
+export const startAgain = () => async dispatch => {
+  try {
+    dispatch(playAgain());
   } catch (e) {
     return console.error(e.message);
   }

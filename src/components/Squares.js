@@ -7,12 +7,16 @@ import Square from './Square';
 
 export default function Squares() {
     const dispatch = useDispatch();
-    const { color, hasWon } = useSelector(state => state.picked);
+    const { newGame } = useSelector(state => state.picked);
     const [colors, setColors] = useState([]);
 
     useEffect(() => {
         resetColors();
     }, []);
+
+    useEffect(() => {
+        if (newGame) resetColors();
+    }, [newGame]);
 
     useEffect(() => {
         getRandomColor();
@@ -47,7 +51,7 @@ export default function Squares() {
     return (
         <section id="squares">
             {
-                colors.map(color => (<Square key={color} color={color} />))
+                colors.map((color, index) => (<Square key={color} color={color} index={index} />))
             }
         </section>
     )
