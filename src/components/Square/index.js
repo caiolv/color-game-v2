@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import picked, { won, reset, startAgain } from '../../store/picked';
+import { won, startAgain } from '../../store/picked';
 
 import { Container, Text } from './styles';
 
@@ -16,7 +16,7 @@ export default function Square({ color, index }) {
             setCurrentColor(pickedColor);
             setWrong(false);
         }
-    }, [hasWon]);
+    }, [hasWon, pickedColor]);
 
     function handleClick () {
         if (!hasWon) {
