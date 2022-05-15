@@ -24,6 +24,8 @@ export default function Square({ color, index }) {
                 dispatch(won());
             else
                 setWrong(true);
+        } else if (index !== 4) { 
+            setWrong(true);
         } else {
             dispatch(startAgain());
         }
