@@ -7,11 +7,14 @@ export const Container = styled.button`
     margin: 0 auto;
     border-radius: 15%;
     background-color: ${props => props.color};
-    transition: transform 0.3s ease-out;
+    transition: all 0.3s ease-out;
     transform: scale(${props => props.wrong ? 0 : 1});
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 
     &:active {
-        border: .75rem solid rgba(9, 9, 9, .5);
+        /* border: .75rem solid rgba(9, 9, 9, .15); */
+        transform: scale(.85);
+        box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
     }
 `;
 
