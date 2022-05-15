@@ -12,7 +12,7 @@ export const Container = styled.button`
 `;
 
 export const Text = styled.span `
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4.1vw + 1rem, 4rem);
     color: #FFF;
     text-shadow: 2px 1px 0px #333, 4px 3px 0px rgba(0,0,0,0.15);
 `;
