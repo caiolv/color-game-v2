@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
-import "../styles/styles.css";
+import "../styles/main.scss";
 
 import Header from "./Header";
 import Squares from "./Squares";

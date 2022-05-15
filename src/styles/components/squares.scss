@@ -1,9 +1,12 @@
 #squares {
     max-width: 700px;
     margin: auto;
-    padding: 3rem 5rem;
+    padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 10vw, 5rem);
+
+    // background-color: red;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: calc(max(3vw, 2rem));
 }
