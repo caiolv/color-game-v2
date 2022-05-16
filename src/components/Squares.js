@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { pickColor } from '../store/picked';
+import { pickColor } from '../store/game';
 
 import Square from './Square';
 
 export default function Squares() {
     const dispatch = useDispatch();
-    const { newGame } = useSelector(state => state.picked);
+    const { newGame } = useSelector(state => state.game);
     const [colors, setColors] = useState([]);
 
     useEffect(() => {

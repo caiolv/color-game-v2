@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
-  name: 'picked',
+  name: 'game',
   
   initialState: {
     color: 'RGB',
@@ -21,17 +21,12 @@ const slice = createSlice({
       state.newGame = true;
       state.hasWon = false;
     },
-    resetState: (state, action) => {
-      state.color = 'RGB';
-      state.hasWon = false;
-      state.newGame = false;
-    },
   },
 });
 
 export default slice.reducer;
 
-const { newPickedColor, playerWon, playAgain, resetState } = slice.actions;
+const { newPickedColor, playerWon, playAgain } = slice.actions;
 
 export const pickColor = (pickedColor) => async dispatch => {
   try {
@@ -52,14 +47,6 @@ export const won = () => async dispatch => {
 export const startAgain = () => async dispatch => {
   try {
     dispatch(playAgain());
-  } catch (e) {
-    return console.error(e.message);
-  }
-}
-
-export const reset = () => async dispatch => {
-  try {
-    dispatch(resetState());
   } catch (e) {
     return console.error(e.message);
   }

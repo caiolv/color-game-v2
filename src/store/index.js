@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux';
 
-import picked from './picked';
+import game from './game';
 
 const reducer = combineReducers({
-    picked,
+    game,
 })
 const store = configureStore({
   reducer,
